@@ -1,6 +1,8 @@
 The "Web API" architecture style
 ================================
 
+Here is [the deliverable HTML document](http://restlet.github.io/web-api-style/).
+
 Formalization based on [this blog post and comments](http://blog.restlet.com/2013/05/02/how-much-rest-should-your-web-api-get/), especially based on the [following discussion on the REST-Discuss list](http://tech.groups.yahoo.com/group/rest-discuss/message/19371).
 
 As a guideline, we will rely on [Roy T. Fielding's dissertation](http://roy.gbiv.com/pubs/dissertation/top.htm), not only chapter 5. 
