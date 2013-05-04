@@ -1,5 +1,5 @@
-Web API style
-=============
+The "Web API" style
+===================
 
 Formalization of the Web API architecture style, inspired from REST.
 
