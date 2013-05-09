@@ -64,8 +64,9 @@
         <li class="tocline1"><a href="#constraints">3. Deriving the Web API Style</a></li>
         <li class="tocline1"><a href="#elements">4. Architectural Elements</a></li>
         <li class="tocline1"><a href="#views">5. Architectural Views</a></li>
-		<li class="tocline1"><a href="#comparison-rest">6. Comparison with REST</a></li>
-		<li class="tocline1"><a href="#summary">7. Summary</a></li>
+	<li class="tocline1"><a href="#comparison-rest">6. Comparison with REST</a></li>
+	<li class="tocline1"><a href="#comparison-rpc">7. Comparison with RPC</a></li>
+	<li class="tocline1"><a href="#summary">8. Summary</a></li>
       </ul>
     </div>    
 
@@ -219,37 +220,41 @@
 	    As you can see the Web API style has been very much influenced by REST and share many of its constraints. 
 		This influence over 10 years has resulted in key simplifications compared to the original RPC style to make 
 		it more aligned with the core Web concepts such as resources, URIs, representations and the HTTP protocol.
-	  </p>
+      </p>
       <p>
         There is no reason to oppose both styles as they are not solving the same problems, even though they are 
 		both deeply connected with the Web. The figure below represents their main differences.
-	  </p>
-	  <img src="http://restlet.files.wordpress.com/2013/05/rest-web-api.png"/>
+      </p>
+      <img src="http://restlet.files.wordpress.com/2013/05/rest-web-api.png"/>
       <p>
-	    Both styles are complementary and can be used together, for example when building a single page web application 
-		where the main HTML is loaded through a regular web page (REST style), including some JavaScript (code on 
-		demand constraint). This code is then interpreted by the web browser to make AJAX calls back to a Web API, 
-		exchanging predefined JSON representations.
-	  </p>
+        Both styles are complementary and can be used together, for example when building a single page web application 
+	where the main HTML is loaded through a regular web page (REST style), including some JavaScript (code on 
+	demand constraint). This code is then interpreted by the web browser to make AJAX calls back to a Web API, 
+	exchanging predefined JSON representations.
+      </p>
       <p>
-	    Let’s also mention hyperdata as a second form of hypermedia with hypertext, that also offers a comprehensive 
-		application of REST. This is the world of the Semantic Web and especially the pragmatic Linked Data movement 
-		based on RDF and related media types such as Turtle, JSON-LD or HAL.
-	  </p>
+        Let’s also mention hyperdata as a second form of hypermedia with hypertext, that also offers a comprehensive 
+        application of REST. This is the world of the Semantic Web and especially the pragmatic Linked Data movement 
+        based on RDF and related media types such as Turtle, JSON-LD or HAL.
+      </p>
       <p>
-	    In other situations, where the client isn’t a web browser but a native mobile app, a connected device or a 
-		program written by a partner to integrate your web site with their own, you only rely on the Web API style, 
-		which is fine again. Let’s now step back and see where these new forms of web architectures will lead us.
-	  </p>
-      <p>
-	  </p>
+        In other situations, where the client isn’t a web browser but a native mobile app, a connected device or a 
+	program written by a partner to integrate your web site with their own, you only rely on the Web API style, 
+	which is fine again. Let’s now step back and see where these new forms of web architectures will lead us.
+      </p>
     </div>
 	
     <div class="section">
-      <h2 class="notoc"><a name="summary" id="summary" shape="rect">7. Summary</a></h2>
+      <h2 class="notoc"><a name="comparison-rpc" id="comparison-rpc" shape="rect">7. Comparison with RPC</a></h2>
       <p>
-	    TBD
-	  </p>
+      </p>
+    </div>
+	
+    <div class="section">
+      <h2 class="notoc"><a name="summary" id="summary" shape="rect">8. Summary</a></h2>
+      <p>
+        TBD
+      </p>
     </div>
 	
   </body>
