@@ -1,181 +1,180 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="http://www.w3.org/TR/2004/REC-webarch-20041215/style/default.css" />
-    <link class="trcopy" rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/w3c-unofficial.css" />
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv="X-UA-Compatible" content="chrome=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" type="text/css" href="http://www.w3.org/TR/2004/REC-webarch-20041215/style/default.css" />
+   <link class="trcopy" rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/w3c-unofficial.css" />
 
-<!--    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+<!--   <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+   <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+   <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
 -->
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+   <!--[if lt IE 9]>
+         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+   <![endif]-->
 
-    <title>Web API Architecture Style</title>
-  </head>
+   <title>Web API Architecture Style</title>
+</head>
 
-  <body>
-
-    <div class="head">
+<body>
+   <div class="head">
       <h1><a name="title" id="title" shape="rect">Web API Architecture Style</a></h1>
 
       <div class="section">
-        <h2 class="notoc"><a id="date" name="date" shape="rect"><span class="trcopy">Draft</span> 10 May 2013</a></h2>
-        <dl>
-          <dt>Editor:</dt>
-          <dd>J&eacute;r&ocirc;me Louvel, Restlet, Inc.</dd>
-          <dt>Authors:</dt>
-          <dd>TBD.</dd>
-        </dl>
-        <hr/>
-	  </div>
-    </div>
-	
-    <div class="section">
+         <h2 class="notoc"><a id="date" name="date" shape="rect"><span class="trcopy">Draft</span> 10 May 2013</a></h2>
+         <dl>
+            <dt>Editor:</dt>
+            <dd>J&eacute;r&ocirc;me Louvel, Restlet, Inc.</dd>
+            <dt>Authors:</dt>
+            <dd>TBD.</dd>
+         </dl>
+         <hr/>
+      </div>
+   </div>
+
+   <div class="section">
       <h2 class="notoc"><a name="abstract" id="abstract" shape="rect">Abstract</a></h2>
       <p>
-	    The Web API architecture style is an hybrid style derived from the REST style. 
-	  </p>
+         The Web API architecture style is an hybrid style derived from both the REST and the RPC styles. 
+      </p>
       <p>
-	    TBD
-	  </p>
-    </div>
+         TBD
+      </p>
+   </div>
 
-	<div class="section">
+   <div class="section">
       <h2 class="notoc"><a name="status" id="status" shape="rect">Status of this document</a></h2>
       <p>
-	    This document is an working draft. Comments can be submitted via <a href="https://github.com/restlet/web-api-style/issues">the issue tracker</a> 
-		of the <a href="https://github.com/restlet/web-api-style">GitHub project</a> and discussed via the 
-		<a href="https://groups.google.com/group/api-craft/">API-Craft</a> and the <a href="http://tech.groups.yahoo.com/group/rest-discuss/">REST-Discuss</a> mailing lists.
-	  </p>
-    </div>
-	  
-    <div class="section">
+         This document is an working draft. Comments can be submitted via <a href="https://github.com/restlet/web-api-style/issues">the issue tracker</a> 
+         of the <a href="https://github.com/restlet/web-api-style">GitHub project</a> and discussed via the 
+         <a href="https://groups.google.com/group/api-craft/">API-Craft</a> and the <a href="http://tech.groups.yahoo.com/group/rest-discuss/">REST-Discuss</a> mailing lists.
+      </p>
+   </div>
+
+   <div class="section">
       <h2 class="notoc"><a id="contents" name="contents" shape="rect">Table of Contents</a></h2>
       <ul class="toc">
-        <li class="tocline1"><a href="#introduction">1. Introduction</a></li>
-        <li class="tocline1"><a href="#requirements">2. Web API Application Domain Requirements</a></li>
-        <li class="tocline1"><a href="#constraints">3. Deriving the Web API Style</a></li>
-        <li class="tocline1"><a href="#elements">4. Architectural Elements</a></li>
-        <li class="tocline1"><a href="#views">5. Architectural Views</a></li>
-	<li class="tocline1"><a href="#comparison-rest">6. Comparison with REST</a></li>
-	<li class="tocline1"><a href="#comparison-rpc">7. Comparison with RPC</a></li>
-	<li class="tocline1"><a href="#summary">8. Summary</a></li>
+         <li class="tocline1"><a href="#introduction">1. Introduction</a></li>
+         <li class="tocline1"><a href="#requirements">2. Web API Application Domain Requirements</a></li>
+         <li class="tocline1"><a href="#constraints">3. Deriving the Web API Style</a></li>
+         <li class="tocline1"><a href="#elements">4. Architectural Elements</a></li>
+         <li class="tocline1"><a href="#views">5. Architectural Views</a></li>
+         <li class="tocline1"><a href="#comparison-rest">6. Comparison with REST</a></li>
+         <li class="tocline1"><a href="#comparison-rpc">7. Comparison with RPC</a></li>
+         <li class="tocline1"><a href="#summary">8. Summary</a></li>
       </ul>
-    </div>    
+   </div>    
 
-    <div class="section">
+   <div class="section">
       <h2 class="notoc"><a name="introduction" id="introduction" shape="rect">1. Introduction</a></h2>
       <p>
-	    Web APIs are designed for systems that are both distributed and driven by machine-to-machine interactions. The Web API style 
-		is the result of the evolution of pragmatic development practices since 2000, starting with the emergence of Web Services (WS-* and *-RPC) and then 
-		the strong influence of the REST style towards more simplification and proper usage of HTTP as an application level protocol rather than a lower-level 
-		transport protocol.
-	  </p>
+         Web APIs are designed for systems that are both distributed and driven by machine-to-machine interactions. The Web API style 
+         is the result of the evolution of pragmatic development practices since 2000, starting with the emergence of Web Services (WS-* and *-RPC) and then 
+         the strong influence of the REST style towards more simplification and proper usage of HTTP as an application level protocol rather than a lower-level 
+         transport protocol.
+      </p>
       <p>
-	    By combining the power of REST (the web of documents) and of Web APIs (the programmable web), we can build a new generation of web sites that are 		
-		inherently cross-device. as illustrated below.
-	  </p>
-	  <img src="images/cross-device-web-sites.png"/>
+         By combining the power of REST (the web of documents) and of Web APIs (the programmable web), we can build a new generation of web sites that are 		
+         inherently cross-device. as illustrated below.
+      </p>
+      <img src="images/cross-device-web-sites.png"/>
       <p>
-	    Those web sites let organizations of all sizes provide a pervasive and contextual access to their information and services, to both customers, 
-		employees and partners via potentially any kind of machine.
-	  </p>
-	  <p>
-	    Cross-device web sites illustrate the strategic value brought by Web APIs in this new era of internet mobility.
-	  </p>
-    </div>
+         Those web sites let organizations of all sizes provide a pervasive and contextual access to their information and services, to both customers, 
+         employees and partners via potentially any kind of machine.
+      </p>
+      <p>
+         Cross-device web sites illustrate the strategic value brought by Web APIs in this new era of internet mobility.
+      </p>
+   </div>
 
-    <div class="section">
+   <div class="section">
       <h2 class="notoc"><a name="requirements" id="requirements" shape="rect">2. Web API Application Domain Requirements</a></h2>
       <p>
-	  </p>
-    </div>
+      </p>
+   </div>
 
-    <div class="section">
-      <h2 class="notoc"><a name="constraints" id="constraints" shape="rect">3. Deriving the Web API Style</a></h2>
-      <p>
-	    Starting with the Null style, we will add constraints to obtain the desired Web API style and explain the resulting
-		properties.
-	  </p>
+   <div class="section">
+   <h2 class="notoc"><a name="constraints" id="constraints" shape="rect">3. Deriving the Web API Style</a></h2>
+   <p>
+      Starting with the Null style, we will add constraints to obtain the desired Web API style and explain the resulting
+      properties.
+   </p>
 
-      <h3 class="notoc"><a name="constraints-null" id="constraints-null" shape="rect">Starting with the Null Style</a></h3>
-      <p>
-	  </p>
+   <h3 class="notoc"><a name="constraints-null" id="constraints-null" shape="rect">Starting with the Null Style</a></h3>
+   <p>
+   </p>
 
-      <h3 class="notoc"><a name="constraints-client-server" id="constraints-client-server" shape="rect">Client-Server</a></h3>
-      <p>
-        <ul>
-		  <li>separation of concerns</li>
-          <li>client = program with varying concerns (maximum reusability needs)</li>
-          <li>server = data or logic accessibility concerns (build ecosystems of innovation)</li>
-          <li>independent evolution of clients and servers at Application scale</li>
-          <li>significant difference from REST</li>
-		</ul>
-	  </p>
+   <h3 class="notoc"><a name="constraints-client-server" id="constraints-client-server" shape="rect">Client-Server</a></h3>
+   <p>
+      <ul>
+         <li>separation of concerns</li>
+         <li>client = program with varying concerns (maximum reusability needs)</li>
+         <li>server = data or logic accessibility concerns (build ecosystems of innovation)</li>
+         <li>independent evolution of clients and servers at Application scale</li>
+         <li>significant difference from REST</li>
+      </ul>
+   </p>
 
-      <h3 class="notoc"><a name="constraints-stateless" id="constraints-stateless" shape="rect">Stateless</a></h3>
-      <p>
-	    Identical to the REST style.
-	  </p>
+   <h3 class="notoc"><a name="constraints-stateless" id="constraints-stateless" shape="rect">Stateless</a></h3>
+   <p>
+      Identical to the REST style.
+   </p>
 
-      <h3 class="notoc"><a name="constraints-cache" id="constraints-cache" shape="rect">Cache</a></h3>
-      <p>
-	    Identical to the REST style.
-	  </p>
+   <h3 class="notoc"><a name="constraints-cache" id="constraints-cache" shape="rect">Cache</a></h3>
+   <p>
+      Identical to the REST style.
+   </p>
 
-      <h3 class="notoc"><a name="constraints-custom-interface" id="constraints-custom-interface" shape="rect">Custom Interface</a></h3>
-      <p>
-        <ul>
-		  <li>predefined set of resources including identifiers and representations	  
+   <h3 class="notoc"><a name="constraints-custom-interface" id="constraints-custom-interface" shape="rect">Custom Interface</a></h3>
+   <p>
+      <ul>
+         <li>predefined set of resources including identifiers and representations	  
             <ul>
-	          <li>cool URIs that don’t change</li>
-	          <li>developers friendly URI naming based on conventions</li>
-		    </ul>
-		  </li>
-		  <li>more efficient than dynamic discovery</li>
-		  <li>requires coordination between clients and servers when changes are deployed
+               <li>cool URIs that don’t change</li>
+               <li>developers friendly URI naming based on conventions</li>
+            </ul>
+         </li>
+         <li>more efficient than dynamic discovery</li>
+         <li>requires coordination between clients and servers when changes are deployed
             <ul>
-	          <li>based on explicit versionning</li>
-		    </ul>
-		  </li>
-		  <li>efficient for both small-grain mobile data transfers as well as large-grain data transfers
+               <li>based on explicit versionning</li>
+            </ul>
+         </li>
+         <li>efficient for both small-grain mobile data transfers as well as large-grain data transfers
             <ul>
-	          <li>based on parameterized resources and content negotiation</li>
-		    </ul>
-		  </li>
-		  <li>not optimal for other forms of architectural interaction</li>
-		  <li>sub-constraints
+               <li>based on parameterized resources and content negotiation</li>
+            </ul>
+         </li>
+         <li>not optimal for other forms of architectural interaction</li>
+         <li>sub-constraints
             <ul>
-	          <li>identification of resources via URIs (identical to REST)</li>
-	          <li>manipulation of resources through low-level HTTP clients (using for example raw JSON or XML representations)</li>
-	          <li>manipulation of resources through high-level client SDKs (for major programming environments) when available</li>
-	          <li>developer documentation to help with understanding of the interface</li>
-		    </ul>
-		  </li>
-		  <li>significant difference from REST</li>
-		</ul>
-	  </p>
+               <li>identification of resources via URIs (identical to REST)</li>
+               <li>manipulation of resources through low-level HTTP clients (using for example raw JSON or XML representations)</li>
+               <li>manipulation of resources through high-level client SDKs (for major programming environments) when available</li>
+               <li>developer documentation to help with understanding of the interface</li>
+            </ul>
+         </li>
+         <li>significant difference from REST</li>
+      </ul>
+   </p>
 
-      <h3 class="notoc"><a name="constraints-layered-system" id="constraints-layered-system" shape="rect">Layered System</a></h3>
-      <p>
-	    Identical to the REST style.
-	  </p>
+   <h3 class="notoc"><a name="constraints-layered-system" id="constraints-layered-system" shape="rect">Layered System</a></h3>
+   <p>
+      Identical to the REST style.
+   </p>
 
-      <h3 class="notoc"><a name="constraints-mobility-aware" id="constraints-mobility-aware" shape="rect">Mobility Aware</a></h3>
-      <p>
-        <ul>
-		  <li>intermittent Internet connectivity
+   <h3 class="notoc"><a name="constraints-mobility-aware" id="constraints-mobility-aware" shape="rect">Mobility Aware</a></h3>
+   <p>
+      <ul>
+         <li>intermittent Internet connectivity
             <ul>
-	          <li>potentially unavailable for a long time</li>
-	          <li>requires an off-line application mode</li>
-		    </ul>
+               <li>potentially unavailable for a long time</li>
+               <li>requires an off-line application mode</li>
+            </ul>
 		  </li>
 		  <li>expansive Internet connectivity
     		  <ul>
@@ -185,80 +184,79 @@
 		    </ul>
 		  </li>
 		  <li>irregular bandwidth (potentially very low)
-            <ul>
-	          <li>adjust media size dynamically</li>
-		    </ul>
-		  </li>
-		  <li>irregular latency (potential very high)
-            <ul>
-	          <li>aggressively use cache (by default)</li>
-	          <li>synchronize cache when possible</li>
-		    </ul>
-		  </li>
-		  <li>not present in REST</li>
-		</ul>
-	  </p>	  
-    </div>
+                     <ul>
+                        <li>adjust media size dynamically</li>
+                     </ul>
+                  </li>
+                  <li>irregular latency (potential very high)
+                     <ul>
+                        <li>aggressively use cache (by default)</li>
+                        <li>synchronize cache when possible</li>
+                     </ul>
+                  </li>
+                  <li>not present in REST</li>
+               </ul>
+            </p>	  
+         </div>
 
-    <div class="section">
-      <h2 class="notoc"><a name="elements" id="elements" shape="rect">4. Architectural Elements</a></h2>
-      <p>
-	    TBD
-	  </p>
-    </div>
-	
-    <div class="section">
-      <h2 class="notoc"><a name="views" id="views" shape="rect">5. Architectural Views</a></h2>
-      <p>
-	    TBD
-	  </p>
-    </div>
-	
-    <div class="section">
+         <div class="section">
+         <h2 class="notoc"><a name="elements" id="elements" shape="rect">4. Architectural Elements</a></h2>
+         <p>
+            TBD
+         </p>
+      </div>
+
+      <div class="section">
+         <h2 class="notoc"><a name="views" id="views" shape="rect">5. Architectural Views</a></h2>
+         <p>
+            TBD
+         </p>
+      </div>
+
+      <div class="section">
       <h2 class="notoc"><a name="comparison-rest" id="comparison-rest" shape="rect">6. Comparison with REST</a></h2>
       <p>
-	    As you can see the Web API style has been very much influenced by REST and share many of its constraints. 
-		This influence over 10 years has resulted in key simplifications compared to the original RPC style to make 
-		it more aligned with the core Web concepts such as resources, URIs, representations and the HTTP protocol.
+         As you can see the Web API style has been very much influenced by REST and share many of its constraints. 
+         This influence over 10 years has resulted in key simplifications compared to the original RPC style to make 
+         it more aligned with the core Web concepts such as resources, URIs, representations and the HTTP protocol.
       </p>
       <p>
-        There is no reason to oppose both styles as they are not solving the same problems, even though they are 
-		both deeply connected with the Web. The figure below represents their main differences.
+         There is no reason to oppose both styles as they are not solving the same problems, even though they are 
+         both deeply connected with the Web. The figure below represents their main differences.
       </p>
-	  <img src="images/rest-and-web-api.png"/>
+      <img src="images/rest-and-web-api.png"/>
       <p>
-        Both styles are complementary and can be used together, for example when building a single page web application 
-	where the main HTML is loaded through a regular web page (REST style), including some JavaScript (code on 
-	demand constraint). This code is then interpreted by the web browser to make AJAX calls back to a Web API, 
-	exchanging predefined JSON representations.
-      </p>
-      <p>
-        Let’s also mention hyperdata as a second form of hypermedia with hypertext, that also offers a comprehensive 
-        application of REST. This is the world of the Semantic Web and especially the pragmatic Linked Data movement 
-        based on RDF and related media types such as Turtle, JSON-LD or HAL.
+         Both styles are complementary and can be used together, for example when building a single page web application 
+         where the main HTML is loaded through a regular web page (REST style), including some JavaScript (code on 
+         demand constraint). This code is then interpreted by the web browser to make AJAX calls back to a Web API, 
+         exchanging predefined JSON representations.
       </p>
       <p>
-        In other situations, where the client isn’t a web browser but a native mobile app, a connected device or a 
-	program written by a partner to integrate your web site with their own, you only rely on the Web API style, 
-	which is fine again. Let’s now step back and see where these new forms of web architectures will lead us.
+         Let’s also mention hyperdata as a second form of hypermedia with hypertext, that also offers a comprehensive 
+         application of REST. This is the world of the Semantic Web and especially the pragmatic Linked Data movement 
+         based on RDF and related media types such as Turtle, JSON-LD or HAL.
       </p>
-    </div>
-	
-    <div class="section">
+      <p>
+         In other situations, where the client isn’t a web browser but a native mobile app, a connected device or a 
+         program written by a partner to integrate your web site with their own, you only rely on the Web API style, 
+         which is fine again. Let’s now step back and see where these new forms of web architectures will lead us.
+      </p>
+   </div>
+
+   <div class="section">
       <h2 class="notoc"><a name="comparison-rpc" id="comparison-rpc" shape="rect">7. Comparison with RPC</a></h2>
       <p>
       </p>
-	  <img src="images/web-api-and-rpc.png"/>
+      <img src="images/web-api-and-rpc.png"/>
       <p>
       </p>
-    </div>
-	
-    <div class="section">
+   </div>
+
+   <div class="section">
       <h2 class="notoc"><a name="summary" id="summary" shape="rect">8. Summary</a></h2>
       <p>
-        TBD
+         TBD
       </p>
-    </div>
-	
-  </body>
+   </div>
+</body>
 </html>
